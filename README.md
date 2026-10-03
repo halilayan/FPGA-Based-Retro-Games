@@ -175,12 +175,12 @@ Linux. The port name may vary between machines; check with
 
 ## Resource utilization (Vivado 2022.2, xc7a35tcpg236-1, Routed)
 
-| Resource | Utilization |
-|---|---:|
-| Slice LUT | 10.18% |
-| Slice Register (FF) | 4.68% |
-| BRAM | 89.00% (44.5 / 50 blocks) |
-| DSP | 7.78% |
+| Resource | Used | Utilization |
+|---|---:|---:|
+| Slice LUT | 2108 | 10.18% |
+| Slice Register (FF) | 1990 | 4.68% |
+| BRAM | 44.5 / 50 blocks | 89.00% |
+| DSP | 7 / 90 | 7.78% |
 
 BRAM usage is above the 85% target — this budget should be checked
 before adding anything that needs new memory (e.g. a tile engine).
@@ -193,12 +193,3 @@ before adding anything that needs new memory (e.g. a tile engine).
 - The CPU cannot read back the framebuffer — on some screens (e.g. the
   pause overlay) restoring the background may not work fully.
 
-The BTNC (reset) button was initially suspected of being a hardware
-bug — live Block Design queries confirmed the wiring was correct all
-along; the "not working" appearance was only caused by MDM
-deliberately halting the CPU while a Vitis debug session was attached
-(standard JTAG debug behavior, not a real hardware issue).
-
-## License
-
-Not yet decided.

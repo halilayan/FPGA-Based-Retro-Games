@@ -1,9 +1,8 @@
 ## ============================================================================
 ## basys3.xdc - Basys 3 (XC7A35T-1CPG236C)
 ##
-## All board-test top modules (vga_test_top, kbd_test_top, pong_board_top)
-## expose the same port list, so this single file constrains any of them.
-## To switch tests, only change the top module in the Sources panel.
+## Constrains the Vivado-generated HDL wrapper around the system Block
+## Design (system_bd.bd) - see bd/system_bd.tcl.
 ## ============================================================================
 
 ## ---- 100 MHz system clock (W5) ---------------------------------------------
@@ -30,24 +29,6 @@ set_clock_groups -asynchronous \
 ## ---- Reset button, BTNC (U18), active high ---------------------------------
 set_property -dict { PACKAGE_PIN U18 IOSTANDARD LVCMOS33 } [get_ports rst_i]
 set_false_path -from [get_ports rst_i]
-
-## ---- 16 slide switches (only SW0/SW1/SW14/SW15 used by pong_board_top) ----
-set_property -dict { PACKAGE_PIN V17 IOSTANDARD LVCMOS33 } [get_ports {sw_i[0]}]
-set_property -dict { PACKAGE_PIN V16 IOSTANDARD LVCMOS33 } [get_ports {sw_i[1]}]
-set_property -dict { PACKAGE_PIN W16 IOSTANDARD LVCMOS33 } [get_ports {sw_i[2]}]
-set_property -dict { PACKAGE_PIN W17 IOSTANDARD LVCMOS33 } [get_ports {sw_i[3]}]
-set_property -dict { PACKAGE_PIN W15 IOSTANDARD LVCMOS33 } [get_ports {sw_i[4]}]
-set_property -dict { PACKAGE_PIN V15 IOSTANDARD LVCMOS33 } [get_ports {sw_i[5]}]
-set_property -dict { PACKAGE_PIN W14 IOSTANDARD LVCMOS33 } [get_ports {sw_i[6]}]
-set_property -dict { PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports {sw_i[7]}]
-set_property -dict { PACKAGE_PIN V2  IOSTANDARD LVCMOS33 } [get_ports {sw_i[8]}]
-set_property -dict { PACKAGE_PIN T3  IOSTANDARD LVCMOS33 } [get_ports {sw_i[9]}]
-set_property -dict { PACKAGE_PIN T2  IOSTANDARD LVCMOS33 } [get_ports {sw_i[10]}]
-set_property -dict { PACKAGE_PIN R3  IOSTANDARD LVCMOS33 } [get_ports {sw_i[11]}]
-set_property -dict { PACKAGE_PIN W2  IOSTANDARD LVCMOS33 } [get_ports {sw_i[12]}]
-set_property -dict { PACKAGE_PIN U1  IOSTANDARD LVCMOS33 } [get_ports {sw_i[13]}]
-set_property -dict { PACKAGE_PIN T1  IOSTANDARD LVCMOS33 } [get_ports {sw_i[14]}]
-set_property -dict { PACKAGE_PIN R2  IOSTANDARD LVCMOS33 } [get_ports {sw_i[15]}]
 
 ## ---- PS/2 keyboard (via USB HID host), C17 / B17 ---------------------------
 ## PULLUP TRUE is mandatory - without it the keyboard never works.

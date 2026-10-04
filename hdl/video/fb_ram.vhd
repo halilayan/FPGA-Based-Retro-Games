@@ -12,8 +12,8 @@
 -- XC7A35T, so there is no async/combinational read path here, and each
 -- port is handled in its own process on its own clock.
 --
--- Port A's registered read (dout_a_o) is unused for now (Pong only
--- writes) but kept for future CPU/blitter use; read-during-write-to-same-
+-- Port A's registered read (dout_a_o) is unused - nothing currently reads
+-- back what was written to the framebuffer; read-during-write-to-same-
 -- address behaviour is left undefined.
 --------------------------------------------------------------------------------
 

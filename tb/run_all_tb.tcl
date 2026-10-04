@@ -20,7 +20,6 @@
 ## sadece entity adi, ör. "tb_vga_sync").
 
 set TB_LIST {
-    tb_blink
     tb_sync_2ff
     tb_clk_pix_gen
     tb_vga_sync
@@ -31,19 +30,13 @@ set TB_LIST {
     tb_scancode_fifo
     tb_ps2_rx
     tb_fb_ram
-    tb_kbd_to_pad
     tb_kbd_axi_if
-    tb_digit_font
-    tb_palette_init
     tb_fb_arbiter
     tb_axi_bram_byte_adapter
     tb_fb_pattern_writer
-    tb_vga_test_top
-    tb_kbd_test_top
     tb_blitter
     tb_console_gpu_axi
     tb_collision
-    tb_cart_slot
     tb_asset_rom
 }
 
@@ -53,9 +46,6 @@ set RTL_DIRS {
     hdl/video
     hdl/input
     hdl/gpu
-    hdl/cart
-    hdl/cart/games
-    hdl/tops
 }
 
 ## Her TB icin kullanilip atilacak, disk uzerindeki gecici proje kok dizini

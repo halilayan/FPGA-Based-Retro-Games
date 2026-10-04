@@ -34,7 +34,6 @@ set TB_LIST {
     tb_kbd_to_pad
     tb_kbd_axi_if
     tb_digit_font
-    tb_pong_core
     tb_palette_init
     tb_fb_arbiter
     tb_axi_bram_byte_adapter

@@ -1,8 +1,8 @@
 /*
  * demo.c -- see demo.h. Transport-agnostic: only calls gfx_/kbd_/sys_.
  *
- * Color indices map to a fixed grayscale ramp set by palette_init.vhd,
- * not RGB - idx>>4 gives the gray level (0=black, 15=white).
+ * Color indices map to a fixed grayscale ramp, not RGB - idx>>4 gives
+ * the gray level (0=black, 15=white).
  */
 #include "demo.h"
 #include "gfx.h"
